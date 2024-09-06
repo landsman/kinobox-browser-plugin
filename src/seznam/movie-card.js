@@ -92,6 +92,32 @@ export function findMovieName(movieCardHtml) {
 }
 
 /**
+ * Parse Release Year of the movie from Headline data.
+ *
+ * @param movieCardHtml {Element}
+ * @returns {{rating: number, year: number}}
+ */
+function findYearAndRating(movieCardHtml) {
+    const coverAndHeadline = movieCardHtml.firstElementChild;
+
+    /* parse movie name */
+    const headlineWrapper = coverAndHeadline.lastElementChild;
+    const headlineData = headlineWrapper.firstElementChild;
+
+    const wrapper = headlineData.lastElementChild;
+    const ratingText = wrapper.firstElementChild.textContent.trim();
+    const rating = parseInt(ratingText.match(/\d+/)[0]);
+
+    const yearAndCategory = wrapper.lastElementChild.textContent.trim();
+    const year = parseInt(yearAndCategory.match(/\d+/)[0]);
+
+    return {
+        rating,
+        year,
+    }
+}
+
+/**
  * Find the Movie Image in the page.
  *
  * @param movieCardHtml
@@ -102,19 +128,29 @@ export function findMovieCover(movieCardHtml) {
     return coverAndHeadline.firstElementChild;
 }
 
+/**
+ * Parse most important data and set state.
+ *
+ * @param state {State}
+ * @param buttonParent {Element}
+ */
 export function initMovieData(state, buttonParent) {
-    const movieCard = buttonParent.parentElement.parentElement.parentElement
+    const movieCard = buttonParent.parentElement.parentElement.parentElement;
+
+    /* parse name */
     const name = findMovieName(movieCard);
     state.setMovieName(name);
 
+    /* parse year and rating */
+    const { year, rating } = findYearAndRating(movieCard);
+    state.setMovieYear(year);
+    state.setMovieRating(rating);
+
+    /* add link to cover */
     const image = findMovieCover(movieCard);
-    image.style.cursor = 'pointer'
+    image['style'].cursor = 'pointer';
+    image['title'] = 'Ukázat na Kinobox';
     image.onclick = () => {
         window.location.href = buildRedirect(state);
     };
-
-    console.log("looking for title", name);
-    console.log("looking for image", image);
-
-    // todo: parse year
 }

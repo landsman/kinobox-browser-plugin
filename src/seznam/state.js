@@ -16,13 +16,21 @@ export class State {
         this.movieName = value;
     }
 
-    /** @type {string|null|undefined} */
+    /** @type {number|null|undefined} */
     movieYear= undefined;
 
-    /** @param value {string} */
+    /** @param value {number} */
     setMovieYear(value) {
         this.movieYear = value;
     }
+
+    /** @type {number|null|undefined} */
+    movieRating = undefined;
+
+    /** @param value {number} */
+    setMovieRating(value) {
+        this.movieRating = value;
+    };
 
     /**
      * Get me movie name with year
