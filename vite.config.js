@@ -8,7 +8,8 @@ export default defineConfig({
         outDir: 'build/chrome-plugin',
         rollupOptions: {
             input: {
-                content: resolve(chromePlugin, 'content.js'),
+                csfd: resolve(chromePlugin, 'csfd.js'),
+                seznam: resolve(chromePlugin, 'seznam.js'),
                 background: resolve(chromePlugin, 'background.js'),
             },
             output: {
