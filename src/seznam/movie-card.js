@@ -29,6 +29,16 @@ export function findMovieTabs(html) {
 }
 
 /**
+ *
+ * @param state {State}
+ * @returns {string}
+ */
+function buildRedirect(state) {
+    const term = state.getMovieNameWithYear();
+    return searchMovieOnKinobox(term);
+}
+
+/**
  * Add Kinobox tab -> redirect to kinobox movie page.
  *
  * @param state {State}
@@ -48,12 +58,9 @@ export function injectKinoboxButton(state, buttonParent) {
         return;
     }
 
-    const term = state.getMovieNameWithYear();
-    const targetUrl = searchMovieOnKinobox(term);
-
     // add to the end
     const kinoboxButton = buildMovieButton(
-        targetUrl,
+        buildRedirect(state),
         notActiveButtonWrapper.className,
         btn[0].className
     );
@@ -61,4 +68,53 @@ export function injectKinoboxButton(state, buttonParent) {
 
     // change state
     state.setAddedKinoboxButton(true)
+}
+
+/**
+ * Find the movie Name in the page.
+ *
+ * @param movieCardHtml {Element}
+ * @returns {Element|null}
+ */
+export function findMovieName(movieCardHtml) {
+    const coverAndHeadline = movieCardHtml.firstElementChild;
+
+    /* parse movie name */
+    const headlineWrapper = coverAndHeadline.lastElementChild;
+    const headlineData = headlineWrapper.firstElementChild;
+    const h3 = headlineData.getElementsByTagName('h3');
+    if (h3 === null) {
+        console.error("Headline not found!");
+        return null;
+    } else {
+        return h3[0].textContent
+    }
+}
+
+/**
+ * Find the Movie Image in the page.
+ *
+ * @param movieCardHtml
+ * @returns {Element}
+ */
+export function findMovieCover(movieCardHtml) {
+    const coverAndHeadline = movieCardHtml.firstElementChild;
+    return coverAndHeadline.firstElementChild;
+}
+
+export function initMovieData(state, buttonParent) {
+    const movieCard = buttonParent.parentElement.parentElement.parentElement
+    const name = findMovieName(movieCard);
+    state.setMovieName(name);
+
+    const image = findMovieCover(movieCard);
+    image.style.cursor = 'pointer'
+    image.onclick = () => {
+        window.location.href = buildRedirect(state);
+    };
+
+    console.log("looking for title", name);
+    console.log("looking for image", image);
+
+    // todo: parse year
 }

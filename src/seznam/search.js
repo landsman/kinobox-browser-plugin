@@ -1,4 +1,4 @@
-import {findMovieTabs, injectKinoboxButton} from "./movie-card";
+import {findMovieCover, findMovieName, findMovieTabs, initMovieData, injectKinoboxButton} from "./movie-card";
 
 /**
  * Parse HTML and find the buttons related to promoted Movie.
@@ -15,9 +15,7 @@ export function improvePageResult(state) {
         return;
     }
 
+    initMovieData(state, buttonParent);
     injectKinoboxButton(state, buttonParent);
-
-    /* test */
-    console.log(buttonParent.parentElement.parentElement.parentElement.textContent.trim());
 }
 
