@@ -1,6 +1,7 @@
 import {parseTermFromURL} from "../csfd/movie";
 import {parseTelevision} from "../csfd/tv";
-import {searchMovieOnKinobox, searchTelevisionOnKinobox} from "../kinobox/kinobox";
+import {cinemaOnKinobox, searchMovieOnKinobox, televisionOnKinobox} from "../kinobox/kinobox";
+import {parseCinema} from "../csfd/cinema";
 
 /**
  * From current URL of the movie on www.csfd.cz redirect me to www.kinobox.cz alternative.
@@ -19,7 +20,13 @@ export function redirectFromCsfdToKinobox(currentUrl) {
     /* tv */
     const csfdTelevision = parseTelevision(currentUrl);
     if (csfdTelevision) {
-        return searchTelevisionOnKinobox();
+        return televisionOnKinobox();
+    }
+
+    /* cinema */
+    const csfdCinema = parseCinema(currentUrl);
+    if (csfdCinema) {
+        return cinemaOnKinobox();
     }
 
     /* unsupported path */
