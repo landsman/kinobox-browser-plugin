@@ -1,4 +1,5 @@
 import {parseTermFromURL} from "../csfd/movie";
+import {parseSearch} from "../csfd/search";
 import {parseTelevision} from "../csfd/tv";
 import {parseCinema} from "../csfd/cinema";
 import {parseCharts} from "../csfd/charts";
@@ -24,6 +25,12 @@ export function redirectFromCsfdToKinobox(currentUrl) {
     const csfdMovieTerm = parseTermFromURL(currentUrl);
     if (csfdMovieTerm !== null) {
         return searchMovieOnKinobox(csfdMovieTerm);
+    }
+
+    /* search */
+    const csfdSearch = parseSearch(currentUrl);
+    if (csfdSearch !== null) {
+        return searchMovieOnKinobox(csfdSearch);
     }
 
     /* charts */

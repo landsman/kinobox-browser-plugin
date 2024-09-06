@@ -19,6 +19,16 @@ test('movie - redirect from csfd to kinobox', () => {
     ).toBe('https://www.kinobox.cz/vyhledavani?term=klub%20rvacu');
 });
 
+test('search', () => {
+    expect(
+        redirectFromCsfdToKinobox('https://www.csfd.cz/podrobne-vyhledavani/')
+    ).toBe('https://www.kinobox.cz/vyhledavani?term=');
+
+    expect(
+        redirectFromCsfdToKinobox('https://www.csfd.cz/hledat/?q=matrix')
+    ).toBe('https://www.kinobox.cz/vyhledavani?term=matrix');
+});
+
 test('vod', () => {
     expect(
         redirectFromCsfdToKinobox('https://www.csfd.cz/vod/')
