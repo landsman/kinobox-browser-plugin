@@ -2,12 +2,12 @@ name: Release
 
 # Add permissions for the GITHUB_TOKEN
 permissions:
-  contents: write  # Ensure write access to release and contents
+  contents: write
 
 on:
   push:
     tags:
-      - 'v*.*.*'  # This triggers the workflow on version tags like v1.0.0
+      - 'v*.*.*' # This triggers the workflow on version tags like v1.0.0
 
 jobs:
   build-and-release:
@@ -34,6 +34,6 @@ jobs:
       - name: 'Create GitHub Release and Upload Asset'
         uses: softprops/action-gh-release@v1
         with:
-          files: chrome-plugin.zip  # Upload the zipped build file
+          files: chrome-plugin.zip
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Use the GitHub token for authentication
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

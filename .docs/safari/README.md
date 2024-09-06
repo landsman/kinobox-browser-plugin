@@ -4,10 +4,10 @@
 2. Navigate to `Developer`
 3. Allow: `Allow unsigned extensions`
 4. Run following build script
-    
-    ```bash
-    ./tools/safari.sh "Kinobox" "io.github.landsman.kinobox"
-    ```
+
+   ```bash
+   ./tools/safari.sh "Kinobox" "io.github.landsman.kinobox"
+   ```
 
 5. It will open xCode automatically
 6. Click to Run icon - it will build and attach extension to the Safari
@@ -21,4 +21,3 @@
 ![message.png](message.png)
 
 ![extension.png](extension.png)
-

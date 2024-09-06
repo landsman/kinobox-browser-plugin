@@ -5,5 +5,5 @@
  * @returns {boolean}
  */
 export function parseVOD(currentUrl) {
-    return currentUrl.includes("/vod/");
+  return currentUrl.includes('/vod/');
 }

@@ -5,5 +5,5 @@
  * @returns {boolean}
  */
 export function parseNews(currentUrl) {
-    return currentUrl.includes("/novinky/");
+  return currentUrl.includes('/novinky/');
 }

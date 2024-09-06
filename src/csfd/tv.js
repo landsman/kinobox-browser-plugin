@@ -5,5 +5,5 @@
  * @returns {boolean}
  */
 export function parseTelevision(currentUrl) {
-    return currentUrl.includes("/televize/");
+  return currentUrl.includes('/televize/');
 }
