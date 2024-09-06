@@ -1,4 +1,4 @@
-import { parseTermFromURL } from '../csfd/movie';
+import { getMovieNameAndYear } from '../csfd/movie';
 import { parseSearch } from '../csfd/search';
 import { parseTelevision } from '../csfd/tv';
 import { parseCinema } from '../csfd/cinema';
@@ -22,15 +22,18 @@ import {
  */
 export function redirectFromCsfdToKinobox(currentUrl) {
   /* movie */
-  const csfdMovieTerm = parseTermFromURL(currentUrl);
-  if (csfdMovieTerm !== null) {
-    return searchMovieOnKinobox(csfdMovieTerm);
+  const csfdMovieData = getMovieNameAndYear(currentUrl);
+
+  console.log("movie data!", csfdMovieData);
+
+  if (csfdMovieData !== null) {
+    return searchMovieOnKinobox(csfdMovieData.name, csfdMovieData.year);
   }
 
   /* search */
   const csfdSearch = parseSearch(currentUrl);
   if (csfdSearch !== null) {
-    return searchMovieOnKinobox(csfdSearch);
+    return searchMovieOnKinobox(csfdSearch, undefined);
   }
 
   /* charts */
