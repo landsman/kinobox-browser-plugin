@@ -1,6 +1,7 @@
 import { findSiblingElement } from './utils.js';
 import { buildMovieButton } from './movie-button.js';
 import { searchMovieOnKinobox } from '../kinobox/kinobox.js';
+import {parseNumber} from "../utils";
 
 /**
  * These buttons help us find the promoted movie in the source code.
@@ -28,13 +29,13 @@ export function findMovieTabs(html) {
 }
 
 /**
+ * Redirect to Kinobox.
  *
  * @param state {State}
  * @returns {string}
  */
 function buildRedirect(state) {
-  const term = state.getMovieNameWithYear();
-  return searchMovieOnKinobox(term);
+  return searchMovieOnKinobox(state.movieName, state.movieYear);
 }
 
 /**
@@ -105,10 +106,10 @@ function findYearAndRating(movieCardHtml) {
 
   const wrapper = headlineData.lastElementChild;
   const ratingText = wrapper.firstElementChild.textContent.trim();
-  const rating = parseInt(ratingText.match(/\d+/)[0]);
+  const rating = parseNumber(ratingText);
 
   const yearAndCategory = wrapper.lastElementChild.textContent.trim();
-  const year = parseInt(yearAndCategory.match(/\d+/)[0]);
+  const year = parseNumber(yearAndCategory);
 
   return {
     rating,

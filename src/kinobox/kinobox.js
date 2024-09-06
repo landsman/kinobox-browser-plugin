@@ -18,11 +18,18 @@ const getPage = {
 /**
  * Get URL for searching in movies on Kinobox.
  *
- * @param query {string}
+ * @param name {string}
+ * @param year {string|undefined|null}
  * @returns {string}
  */
-export function searchMovieOnKinobox(query) {
-  const term = encodeURIComponent(query);
+export function searchMovieOnKinobox(name, year = undefined) {
+  let result = name || '';
+
+  if (year !== undefined && year !== '' && year !== 'undefined') {
+    result += ' ' + year;
+  }
+
+  const term = encodeURIComponent(result);
   return getPage.search(term);
 }
 

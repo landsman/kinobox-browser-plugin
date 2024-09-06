@@ -31,20 +31,6 @@ export class State {
     this.movieRating = value;
   }
 
-  /**
-   * Get me movie name with year
-   * @returns {string}
-   */
-  getMovieNameWithYear() {
-    let result = this.movieName || '';
-
-    if (this.movieYear !== undefined) {
-      result += ' ' + this.movieYear;
-    }
-
-    return result;
-  }
-
   /** @type {Boolean} */
   addedKinoboxButton = false;
 

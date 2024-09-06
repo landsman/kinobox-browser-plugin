@@ -8,7 +8,7 @@ export function initCsfd() {
   console.debug('---------------- KINOBOX-CSFD ----------------');
 
   /* redirect from csfd movie to kinobox search */
-  const movieRedirect = redirectFromCsfdToKinobox(window.location.href);
+  const movieRedirect = redirectFromCsfdToKinobox(window.location.href, document);
   if (movieRedirect !== null) {
     window.location.href = movieRedirect;
   }

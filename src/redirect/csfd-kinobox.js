@@ -1,4 +1,4 @@
-import { parseTermFromURL } from '../csfd/movie';
+import { getMovieNameAndYear } from '../csfd/movie';
 import { parseSearch } from '../csfd/search';
 import { parseTelevision } from '../csfd/tv';
 import { parseCinema } from '../csfd/cinema';
@@ -18,13 +18,14 @@ import {
  * From current URL of the movie on www.csfd.cz redirect me to www.kinobox.cz alternative.
  *
  * @param currentUrl {string} window.location.href
+ * @param html {Element|undefined}
  * @returns {string|null}
  */
-export function redirectFromCsfdToKinobox(currentUrl) {
+export function redirectFromCsfdToKinobox(currentUrl, html) {
   /* movie */
-  const csfdMovieTerm = parseTermFromURL(currentUrl);
-  if (csfdMovieTerm !== null) {
-    return searchMovieOnKinobox(csfdMovieTerm);
+  const csfdMovieData = getMovieNameAndYear(currentUrl, html);
+  if (csfdMovieData !== null) {
+    return searchMovieOnKinobox(csfdMovieData.name, csfdMovieData.year);
   }
 
   /* search */
