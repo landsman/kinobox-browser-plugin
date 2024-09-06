@@ -14,8 +14,13 @@ Let me know if you’d like any further adjustments in [the issues](https://gith
 3. Unzip it
 4. Follow browser related instructions bellow
 
-## Load the extension in Chrome
+## Chrome
 
 1. Go to [chrome://extensions/](chrome://extensions/)
 2. Enable Developer mode
 3. Click Load unpacked and select the unzipped folder
+4. Done!
+
+## Safari
+
+This is still in development. You can try experimental build. [See more in developer docs](.docs/safari/README.md).
