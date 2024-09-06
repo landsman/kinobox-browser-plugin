@@ -7,13 +7,13 @@ const domain = 'https://www.kinobox.cz';
  * URLs catalog
  */
 const getPage = {
-    search: (term) => domain + `/vyhledavani?term=${term}`,
-    charts: domain + '/zebricky',
-    vod: domain + '/vod',
-    television: domain + '/tvprogram/tipy',
-    cinema: domain + '/kino_program/hraji-v-kinech',
-    articles: domain + '/clanky',
-}
+  search: term => domain + `/vyhledavani?term=${term}`,
+  charts: domain + '/zebricky',
+  vod: domain + '/vod',
+  television: domain + '/tvprogram/tipy',
+  cinema: domain + '/kino_program/hraji-v-kinech',
+  articles: domain + '/clanky',
+};
 
 /**
  * Get URL for searching in movies on Kinobox.
@@ -22,8 +22,8 @@ const getPage = {
  * @returns {string}
  */
 export function searchMovieOnKinobox(query) {
-    const term = encodeURIComponent(query);
-    return getPage.search(term);
+  const term = encodeURIComponent(query);
+  return getPage.search(term);
 }
 
 /**
@@ -32,7 +32,7 @@ export function searchMovieOnKinobox(query) {
  * @returns {string}
  */
 export function chartsOnKinobox() {
-    return getPage.charts;
+  return getPage.charts;
 }
 
 /**
@@ -41,7 +41,7 @@ export function chartsOnKinobox() {
  * @returns {string}
  */
 export function vodOnKinobox() {
-    return getPage.vod;
+  return getPage.vod;
 }
 
 /**
@@ -50,7 +50,7 @@ export function vodOnKinobox() {
  * @returns {string}
  */
 export function televisionOnKinobox() {
-    return getPage.television;
+  return getPage.television;
 }
 
 /**
@@ -59,7 +59,7 @@ export function televisionOnKinobox() {
  * @returns {string}
  */
 export function cinemaOnKinobox() {
-    return getPage.cinema;
+  return getPage.cinema;
 }
 
 /**
@@ -68,5 +68,5 @@ export function cinemaOnKinobox() {
  * @returns {string}
  */
 export function articlesOnKinobox() {
-    return getPage.articles;
+  return getPage.articles;
 }

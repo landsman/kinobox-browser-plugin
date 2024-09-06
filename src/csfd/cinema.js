@@ -5,5 +5,5 @@
  * @returns {boolean}
  */
 export function parseCinema(currentUrl) {
-    return currentUrl.includes("/kino/");
+  return currentUrl.includes('/kino/');
 }

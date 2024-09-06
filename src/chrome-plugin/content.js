@@ -1,5 +1,5 @@
-import {initCsfd} from "../csfd";
-import {initSeznam} from "../seznam";
+import { initCsfd } from '../csfd';
+import { initSeznam } from '../seznam';
 
 initCsfd();
 initSeznam();

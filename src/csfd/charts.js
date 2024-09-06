@@ -5,5 +5,5 @@
  * @returns {boolean}
  */
 export function parseCharts(currentUrl) {
-    return currentUrl.includes("/zebricky/");
+  return currentUrl.includes('/zebricky/');
 }
