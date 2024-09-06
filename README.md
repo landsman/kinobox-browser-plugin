@@ -1,7 +1,9 @@
 # Kinobox.cz Browser Plugin
 
-Are you tired of annoying CSFD.cz pages? Do you prefer [Kinobox](https://www.kinobox.cz)?
-Did a friend send you a movie link, and you want to add it to [your Watchlist](https://www.kinobox.cz/muj-kinobox/watchlist)?
+- Are you tired of annoying CSFD.cz pages? 
+- Do you prefer [Kinobox](https://www.kinobox.cz)?
+- Did a friend send you a movie link, and you want to add it to [your Watchlist](https://www.kinobox.cz/muj-kinobox/watchlist)? 
+- Do you use [Seznam](https://www.seznam.cz) for searching movies?
 
 Add this browser extension to make it easier! 🙌
 
