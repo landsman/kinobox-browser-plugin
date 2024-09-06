@@ -1,0 +1,8 @@
+html {
+    background: #131314 !important;
+}
+
+body {
+    visibility: hidden;
+    opacity: 0;
+}
