@@ -3,7 +3,9 @@ import {parseTelevision} from "../csfd/tv";
 import {parseCinema} from "../csfd/cinema";
 import {parseCharts} from "../csfd/charts";
 import {parseVOD} from "../csfd/vod";
+import {parseNews} from "../csfd/news";
 import {
+    articlesOnKinobox,
     chartsOnKinobox,
     cinemaOnKinobox,
     searchMovieOnKinobox,
@@ -46,6 +48,12 @@ export function redirectFromCsfdToKinobox(currentUrl) {
     const csfdCinema = parseCinema(currentUrl);
     if (csfdCinema) {
         return cinemaOnKinobox();
+    }
+
+    /* articles / news */
+    const csfdNews = parseNews(currentUrl);
+    if (csfdNews) {
+        return articlesOnKinobox();
     }
 
     /* unsupported path */

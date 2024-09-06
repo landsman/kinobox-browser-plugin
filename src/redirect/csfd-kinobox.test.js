@@ -69,8 +69,14 @@ test('television redirect', () => {
     ).toBe('https://www.kinobox.cz/tvprogram/tipy');
 });
 
-test('unsupported pages', () => {
+test('news', () => {
     expect(
         redirectFromCsfdToKinobox('https://www.csfd.cz/novinky/')
+    ).toBe('https://www.kinobox.cz/clanky');
+});
+
+test('unsupported pages', () => {
+    expect(
+        redirectFromCsfdToKinobox('https://www.csfd.cz/diskuze/')
     ).toBe(null);
 });

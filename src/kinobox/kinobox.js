@@ -11,7 +11,8 @@ const getPage = {
     charts: domain + '/zebricky',
     vod: domain + '/vod',
     television: domain + '/tvprogram/tipy',
-    cinema: domain + '/kino_program/hraji-v-kinech'
+    cinema: domain + '/kino_program/hraji-v-kinech',
+    articles: domain + '/clanky',
 }
 
 /**
@@ -53,10 +54,19 @@ export function televisionOnKinobox() {
 }
 
 /**
- * Redirect to Cinema page in Kinobox.
+ * Redirect to Cinema page on Kinobox.
  *
  * @returns {string}
  */
 export function cinemaOnKinobox() {
     return getPage.cinema;
+}
+
+/**
+ * Redirect to Articles page on Kinobox.
+ *
+ * @returns {string}
+ */
+export function articlesOnKinobox() {
+    return getPage.articles;
 }
