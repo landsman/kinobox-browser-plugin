@@ -22,8 +22,8 @@ const getPage = {
  * @returns {string}
  */
 export function searchMovieOnKinobox(query) {
-    const term = encodeURIComponent(query)
-    return getPage.search(term)
+    const term = encodeURIComponent(query);
+    return getPage.search(term);
 }
 
 /**

@@ -20,7 +20,10 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://www.csfd.cz/*"],
+      "matches": [
+        "https://www.csfd.cz/*",
+        "https://search.seznam.cz/*"
+      ],
       "js": ["content.js"]
     }
   ],
