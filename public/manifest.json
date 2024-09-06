@@ -17,7 +17,7 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://www.csfd.cz/film/*"],
+      "matches": ["https://www.csfd.cz/*"],
       "js": ["content.js"]
     }
   ],
