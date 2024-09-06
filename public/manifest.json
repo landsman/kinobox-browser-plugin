@@ -1,8 +1,13 @@
 {
   "name": "kinobox-browser-extension",
+  "short_name": "kinobox.cz",
   "description": "Redirect from CSFD to Kinobox",
   "version": "1.0.2",
   "homepage_url": "https://github.com/landsman/kinobox-browser-plugin",
+  "developer": {
+    "name": "Michal Landsman",
+    "url": "https://www.instuit.cz"
+  },
   "manifest_version": 3,
   "icons": {
     "16": "icons/icon-16.png",
