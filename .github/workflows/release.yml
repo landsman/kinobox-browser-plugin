@@ -14,30 +14,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Checkout the code
-      - name: Checkout code
+      - name: 'Checkout code'
         uses: actions/checkout@v4
 
-      # Set up Node.js
-      - name: Set up Node.js
+      - name: 'Set up Node.js'
         uses: actions/setup-node@v4
         with:
           node-version: '18'
 
-      # Install dependencies
-      - name: Install dependencies
+      - name: 'Install dependencies'
         run: npm install
 
-      # Build the project (Vite build)
-      - name: Build the project
+      - name: 'Build the project'
         run: npm run build
 
-      # Zip the build output
-      - name: Zip build folder
+      - name: 'Zip build folder'
         run: zip -r chrome-plugin.zip build/chrome-plugin
 
-      # Create a release and upload the zip file
-      - name: Create GitHub Release and Upload Asset
+      - name: 'Create GitHub Release and Upload Asset'
         uses: softprops/action-gh-release@v1
         with:
           files: chrome-plugin.zip  # Upload the zipped build file
