@@ -22,6 +22,7 @@ export default defineConfig(({ mode }) => {
         },
         output: {
           entryFileNames: '[name].js',
+          format: 'es'
         },
       },
     },
