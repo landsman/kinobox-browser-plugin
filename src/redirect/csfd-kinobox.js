@@ -2,7 +2,14 @@ import {parseTermFromURL} from "../csfd/movie";
 import {parseTelevision} from "../csfd/tv";
 import {parseCinema} from "../csfd/cinema";
 import {parseCharts} from "../csfd/charts";
-import {chartsOnKinobox, cinemaOnKinobox, searchMovieOnKinobox, televisionOnKinobox} from "../kinobox/kinobox";
+import {parseVOD} from "../csfd/vod";
+import {
+    chartsOnKinobox,
+    cinemaOnKinobox,
+    searchMovieOnKinobox,
+    televisionOnKinobox,
+    vodOnKinobox
+} from "../kinobox/kinobox";
 
 /**
  * From current URL of the movie on www.csfd.cz redirect me to www.kinobox.cz alternative.
@@ -21,6 +28,12 @@ export function redirectFromCsfdToKinobox(currentUrl) {
     const csfdCharts = parseCharts(currentUrl);
     if (csfdCharts) {
         return chartsOnKinobox();
+    }
+
+    /* vod */
+    const csfdVOD = parseVOD(currentUrl);
+    if (csfdVOD) {
+        return vodOnKinobox();
     }
 
     /* tv */

@@ -19,6 +19,21 @@ test('movie - redirect from csfd to kinobox', () => {
     ).toBe('https://www.kinobox.cz/vyhledavani?term=klub%20rvacu');
 });
 
+test('vod', () => {
+    expect(
+        redirectFromCsfdToKinobox('https://www.csfd.cz/vod/')
+    ).toBe('https://www.kinobox.cz/vod');
+
+    expect(
+        redirectFromCsfdToKinobox('https://www.csfd.cz/vod/netflix/')
+    ).toBe('https://www.kinobox.cz/vod');
+
+    // todo: add support for genre - https://www.kinobox.cz/zebricky/nejlepsi/filmy/akcni?expandProviders
+    expect(
+        redirectFromCsfdToKinobox('https://www.csfd.cz/vod/netflix/?genre%5B%5D=1')
+    ).toBe('https://www.kinobox.cz/vod');
+});
+
 test('charts', () => {
     expect(
         redirectFromCsfdToKinobox('https://www.csfd.cz/zebricky/filmy/nejlepsi/')
@@ -29,7 +44,6 @@ test('charts', () => {
         redirectFromCsfdToKinobox('https://www.csfd.cz/zebricky/serialy/nejlepsi/')
     ).toBe('https://www.kinobox.cz/zebricky');
 });
-
 
 test('cinema redirect', () => {
     expect(

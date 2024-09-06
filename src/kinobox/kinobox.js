@@ -9,6 +9,7 @@ const domain = 'https://www.kinobox.cz';
 const getPage = {
     search: (term) => domain + `/vyhledavani?term=${term}`,
     charts: domain + '/zebricky',
+    vod: domain + '/vod',
     television: domain + '/tvprogram/tipy',
     cinema: domain + '/kino_program/hraji-v-kinech'
 }
@@ -31,6 +32,15 @@ export function searchMovieOnKinobox(query) {
  */
 export function chartsOnKinobox() {
     return getPage.charts;
+}
+
+/**
+ * Redirect to VOD page on Kinobox.
+ *
+ * @returns {string}
+ */
+export function vodOnKinobox() {
+    return getPage.vod;
 }
 
 /**
