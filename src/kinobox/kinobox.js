@@ -8,6 +8,7 @@ const domain = 'https://www.kinobox.cz';
  */
 const getPage = {
     search: (term) => domain + `/vyhledavani?term=${term}`,
+    charts: domain + '/zebricky',
     television: domain + '/tvprogram/tipy',
     cinema: domain + '/kino_program/hraji-v-kinech'
 }
@@ -21,6 +22,15 @@ const getPage = {
 export function searchMovieOnKinobox(query) {
     const term = encodeURIComponent(query)
     return getPage.search(term)
+}
+
+/**
+ * Redirect to Charts page on Kinobox.
+ *
+ * @returns {string}
+ */
+export function chartsOnKinobox() {
+    return getPage.charts;
 }
 
 /**

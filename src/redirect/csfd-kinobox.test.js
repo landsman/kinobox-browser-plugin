@@ -7,6 +7,18 @@ test('movie - redirect from csfd to kinobox', () => {
     ).toBe('https://www.kinobox.cz/vyhledavani?term=klub%20rvacu');
 });
 
+test('charts', () => {
+    expect(
+        redirectFromCsfdToKinobox('https://www.csfd.cz/zebricky/filmy/nejlepsi/')
+    ).toBe('https://www.kinobox.cz/zebricky');
+
+    // todo: add page for series
+    expect(
+        redirectFromCsfdToKinobox('https://www.csfd.cz/zebricky/serialy/nejlepsi/')
+    ).toBe('https://www.kinobox.cz/zebricky');
+});
+
+
 test('cinema redirect', () => {
     expect(
         redirectFromCsfdToKinobox('https://www.csfd.cz/kino/1-praha/')
