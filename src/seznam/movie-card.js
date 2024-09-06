@@ -44,7 +44,7 @@ function buildRedirect(state) {
  * @param state {State}
  * @param buttonParent {Element}
  */
-export function injectKinoboxButton(state, buttonParent) {
+export async function injectKinoboxButton(state, buttonParent) {
     // the first button have active styles, we need some other
     const notActiveButtonWrapper = findSiblingElement(buttonParent);
     if (notActiveButtonWrapper === null) {
@@ -134,7 +134,7 @@ export function findMovieCover(movieCardHtml) {
  * @param state {State}
  * @param buttonParent {Element}
  */
-export function initMovieData(state, buttonParent) {
+export async function initMovieData(state, buttonParent) {
     const movieCard = buttonParent.parentElement.parentElement.parentElement;
 
     /* parse name */

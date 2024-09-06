@@ -1,11 +1,11 @@
-import {findMovieCover, findMovieName, findMovieTabs, initMovieData, injectKinoboxButton} from "./movie-card";
+import {findMovieTabs, initMovieData, injectKinoboxButton} from "./movie-card";
 
 /**
  * Parse HTML and find the buttons related to promoted Movie.
  *
  * @param state {State}
  */
-export function improvePageResult(state) {
+export async function improvePageResult(state) {
     const contentElement = document.getElementById('contentWrapper');
 
     /* parser logic based on buttons */
@@ -15,7 +15,7 @@ export function improvePageResult(state) {
         return;
     }
 
-    initMovieData(state, buttonParent);
-    injectKinoboxButton(state, buttonParent);
+    await initMovieData(state, buttonParent);
+    await injectKinoboxButton(state, buttonParent);
 }
 
