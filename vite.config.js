@@ -11,16 +11,17 @@ export default defineConfig(({ mode }) => {
         build: {
             minify: env.VITE_MINIFY === 'true', // Use your custom env variable
             target: 'esnext',
+            modulePreload: {
+                polyfill: false
+            },
             outDir: 'build/chrome-plugin',
             rollupOptions: {
                 input: {
-                    csfd: resolve(chromePlugin, 'csfd.js'),
-                    seznam: resolve(chromePlugin, 'seznam.js'),
+                    content: resolve(chromePlugin, 'content.js'),
                     background: resolve(chromePlugin, 'background.js'),
                 },
                 output: {
                     entryFileNames: '[name].js',
-                    manualChunks: undefined, // Disable code splitting
                 }
             }
         },
