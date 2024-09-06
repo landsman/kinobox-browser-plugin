@@ -18,14 +18,12 @@ import {
  * From current URL of the movie on www.csfd.cz redirect me to www.kinobox.cz alternative.
  *
  * @param currentUrl {string} window.location.href
+ * @param html {Element|undefined}
  * @returns {string|null}
  */
-export function redirectFromCsfdToKinobox(currentUrl) {
+export function redirectFromCsfdToKinobox(currentUrl, html) {
   /* movie */
-  const csfdMovieData = getMovieNameAndYear(currentUrl);
-
-  console.log("movie data!", csfdMovieData);
-
+  const csfdMovieData = getMovieNameAndYear(currentUrl, html);
   if (csfdMovieData !== null) {
     return searchMovieOnKinobox(csfdMovieData.name, csfdMovieData.year);
   }
@@ -33,7 +31,7 @@ export function redirectFromCsfdToKinobox(currentUrl) {
   /* search */
   const csfdSearch = parseSearch(currentUrl);
   if (csfdSearch !== null) {
-    return searchMovieOnKinobox(csfdSearch, undefined);
+    return searchMovieOnKinobox(csfdSearch);
   }
 
   /* charts */

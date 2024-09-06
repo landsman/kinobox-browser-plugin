@@ -25,7 +25,7 @@ const getPage = {
 export function searchMovieOnKinobox(name, year = undefined) {
   let result = name || '';
 
-  if (year !== undefined || year !== '') {
+  if (year !== undefined && year !== '' && year !== 'undefined') {
     result += ' ' + year;
   }
 

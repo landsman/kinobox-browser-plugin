@@ -3,10 +3,14 @@ import { parseNumber } from '../utils';
 /**
  * Get movie name from the page HTML.
  *
- * @param html {Element}
+ * @param html {Element|undefined}
  * @returns {{year: number|null, name: string|null}|null}
  */
 function parseMovieNameFromPage(html) {
+  if (html === undefined) {
+    return null;
+  }
+
   const wrapper = html.getElementsByClassName('main-movie-profile');
   if (wrapper.length === 0) {
     console.debug("Movie wrapper not found!");
@@ -57,9 +61,10 @@ function parseTermFromURL(currentUrl) {
  * Parse data to get name and year of the movie.
  *
  * @param currentUrl {string}
- * @returns {{year: string, name: string|null}}
+ * @param html {Element|null}
+ * @returns {{year: string, name: string|undefined}}
  */
-export function getMovieNameAndYear(currentUrl) {
+export function getMovieNameAndYear(currentUrl, html) {
   const check = currentUrl.includes('/film/');
   if (!check) {
     return null;
@@ -72,7 +77,7 @@ export function getMovieNameAndYear(currentUrl) {
     year: '',
   };
 
-  const fromPage = parseMovieNameFromPage(document);
+  const fromPage = parseMovieNameFromPage(html);
   if (fromPage === null) {
     return result;
   }
