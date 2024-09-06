@@ -4,8 +4,8 @@
   "description": "Plugin for your web browser. First feature is automatic redirect from csfd movie page to kinobox search query with the movie title. Later we can do more with it.",
   "main": "background.js",
   "scripts": {
-    "eslint": "eslint",
-    "eslint-fix": "eslint . --fix",
+    "lint": "eslint",
+    "lint-fix": "eslint . --fix",
     "test": "jest",
     "build": "vite build",
     "watch": "vite build --watch"
