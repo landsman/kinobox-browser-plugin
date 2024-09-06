@@ -1,5 +1,6 @@
 import {findSiblingElement} from "./utils";
 import {buildMovieButton} from "./movie-button";
+import {searchMovieOnKinobox} from "../kinobox/kinobox";
 
 /**
  * These buttons help us find the promoted movie in the source code.
@@ -47,9 +48,12 @@ export function injectKinoboxButton(state, buttonParent) {
         return;
     }
 
+    const term = state.getMovieNameWithYear();
+    const targetUrl = searchMovieOnKinobox(term);
+
     // add to the end
     const kinoboxButton = buildMovieButton(
-        'https://www.kinobox.cz', // todo: change
+        targetUrl,
         notActiveButtonWrapper.className,
         btn[0].className
     );
