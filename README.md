@@ -12,14 +12,16 @@ Let me know if you’d like any further adjustments in [the issues](https://gith
 1. Go to [Releases](https://github.com/landsman/kinobox-browser-plugin/releases)
 2. Download zip file
 3. Unzip it
-4. Follow browser related instructions bellow
+4. Follow browser related instructions bellow ⬇️
 
 ## Chrome
 
-1. Go to [chrome://extensions/](chrome://extensions/)
-2. Enable Developer mode
-3. Click Load unpacked and select the unzipped folder
-4. Done!
+1. Open Google Chrome browser
+2. Go to [chrome://extensions/](chrome://extensions/) or More options icon (dots) -> Extensions
+3. Click to `Developer mode` in the right top corner
+4. Click `Load unpacked` in the left top corner
+5. Select the unzipped folder that you downloaded
+6. Done!
 
 ## Safari
 
