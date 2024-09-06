@@ -3,6 +3,18 @@ import {redirectFromCsfdToKinobox} from "./csfd-kinobox";
 
 test('movie - redirect from csfd to kinobox', () => {
     expect(
+        redirectFromCsfdToKinobox('https://www.csfd.cz/film/9499-matrix/')
+    ).toBe('https://www.kinobox.cz/vyhledavani?term=matrix');
+
+    expect(
+        redirectFromCsfdToKinobox('https://www.csfd.cz/film/2294-vykoupeni-z-veznice-shawshank/')
+    ).toBe('https://www.kinobox.cz/vyhledavani?term=vykoupeni%20z%20veznice%20shawshank');
+
+    expect(
+        redirectFromCsfdToKinobox('https://www.csfd.cz/film/2982-prelet-nad-kukaccim-hnizdem/')
+    ).toBe('https://www.kinobox.cz/vyhledavani?term=prelet%20nad%20kukaccim%20hnizdem');
+
+    expect(
         redirectFromCsfdToKinobox('https://www.csfd.cz/film/2667-klub-rvacu/prehled/')
     ).toBe('https://www.kinobox.cz/vyhledavani?term=klub%20rvacu');
 });
