@@ -1,3 +1,5 @@
+import { removeUselessWords } from '../utils';
+
 /**
  * Production domain
  */
@@ -16,6 +18,23 @@ const getPage = {
 };
 
 /**
+ * Internal function
+ *
+ * @param name {string}
+ * @param year {string|undefined|null}
+ * @returns {string}
+ */
+export function prepareForSearch(name, year) {
+  let result = name || '';
+  if (year !== undefined && year !== '' && year !== 'undefined') {
+    result += ' ' + year;
+  }
+  result = removeUselessWords(result);
+
+  return encodeURIComponent(result);
+}
+
+/**
  * Get URL for searching in movies on Kinobox.
  *
  * @param name {string}
@@ -23,13 +42,8 @@ const getPage = {
  * @returns {string}
  */
 export function searchMovieOnKinobox(name, year = undefined) {
-  let result = name || '';
+  const term = prepareForSearch(name, year);
 
-  if (year !== undefined && year !== '' && year !== 'undefined') {
-    result += ' ' + year;
-  }
-
-  const term = encodeURIComponent(result);
   return getPage.search(term);
 }
 
