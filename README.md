@@ -12,7 +12,7 @@ Let me know if you’d like any further adjustments in [the issues](https://gith
 ## Installation
 
 1. Go to [Releases](https://github.com/landsman/kinobox-browser-plugin/releases)
-2. Download zip file
+2. Download zip file `chrome-plugin.zip`
 3. Unzip it
 4. Follow browser related instructions bellow ⬇️
 
