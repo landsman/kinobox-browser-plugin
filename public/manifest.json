@@ -2,7 +2,7 @@
   "name": "Kinobox.cz",
   "short_name": "kinobox",
   "description": "Redirect from CSFD to Kinobox",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "homepage_url": "https://github.com/landsman/kinobox-browser-plugin",
   "author": "landsman@insuit.cz",
   "manifest_version": 3,
