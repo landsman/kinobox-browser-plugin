@@ -28,3 +28,12 @@ Let me know if you’d like any further adjustments in [the issues](https://gith
 ## Safari
 
 This is still in development. You can try experimental build. [See more in developer docs](.docs/safari/README.md).
+
+## Testing features
+
+- [CSFD - movie detail redirect](https://www.csfd.cz/film/2982-prelet-nad-kukaccim-hnizdem/)
+- [CSFD - search results](https://www.csfd.cz/hledat/?q=klub+rvacu)
+- [CSFD - VOD](https://www.csfd.cz/vod/)
+- [CSFD - television](https://www.csfd.cz/televize/)
+- [CSFD - charts](https://www.csfd.cz/zebricky/filmy/nejlepsi/)
+- [Seznam - movie card](https://search.seznam.cz/?q=letec+film&oq=letec&aq=-1&ms=5465&ks=10)
