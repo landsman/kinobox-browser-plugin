@@ -4,14 +4,14 @@ import { redirectFromCsfdToKinobox } from './csfd-kinobox';
 test('movie - redirect from csfd to kinobox', () => {
   expect(
     redirectFromCsfdToKinobox('https://www.csfd.cz/film/9499-matrix/')
-  ).toBe('https://www.kinobox.cz/vyhledavani?term=matrix');
+  ).toBe('https://www.kinobox.cz/vyhledavani?term=matrix&target=films');
 
   expect(
     redirectFromCsfdToKinobox(
       'https://www.csfd.cz/film/2294-vykoupeni-z-veznice-shawshank/'
     )
   ).toBe(
-    'https://www.kinobox.cz/vyhledavani?term=vykoupeni%20z%20veznice%20shawshank'
+    'https://www.kinobox.cz/vyhledavani?term=vykoupeni%20z%20veznice%20shawshank&target=films'
   );
 
   expect(
@@ -19,24 +19,24 @@ test('movie - redirect from csfd to kinobox', () => {
       'https://www.csfd.cz/film/2982-prelet-nad-kukaccim-hnizdem/'
     )
   ).toBe(
-    'https://www.kinobox.cz/vyhledavani?term=prelet%20nad%20kukaccim%20hnizdem'
+    'https://www.kinobox.cz/vyhledavani?term=prelet%20nad%20kukaccim%20hnizdem&target=films'
   );
 
   expect(
     redirectFromCsfdToKinobox(
       'https://www.csfd.cz/film/2667-klub-rvacu/prehled/'
     )
-  ).toBe('https://www.kinobox.cz/vyhledavani?term=klub%20rvacu');
+  ).toBe('https://www.kinobox.cz/vyhledavani?term=klub%20rvacu&target=films');
 });
 
 test('search', () => {
   expect(
     redirectFromCsfdToKinobox('https://www.csfd.cz/podrobne-vyhledavani/')
-  ).toBe('https://www.kinobox.cz/vyhledavani?term=');
+  ).toBe('https://www.kinobox.cz/vyhledavani?term=&target=films');
 
   expect(
     redirectFromCsfdToKinobox('https://www.csfd.cz/hledat/?q=matrix')
-  ).toBe('https://www.kinobox.cz/vyhledavani?term=matrix');
+  ).toBe('https://www.kinobox.cz/vyhledavani?term=matrix&target=films');
 });
 
 test('vod', () => {

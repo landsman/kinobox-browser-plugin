@@ -1,3 +1,5 @@
+import { removeUselessWords } from '../utils';
+
 /**
  * Production domain
  */
@@ -7,13 +9,30 @@ const domain = 'https://www.kinobox.cz';
  * URLs catalog
  */
 const getPage = {
-  search: term => domain + `/vyhledavani?term=${term}`,
+  search: term => domain + `/vyhledavani?term=${term}&target=films`,
   charts: domain + '/zebricky',
   vod: domain + '/vod',
   television: domain + '/tvprogram/tipy',
   cinema: domain + '/kino_program/hraji-v-kinech',
   articles: domain + '/clanky',
 };
+
+/**
+ * Internal function
+ *
+ * @param name {string}
+ * @param year {string|undefined|null}
+ * @returns {string}
+ */
+export function prepareForSearch(name, year) {
+  let result = name || '';
+  if (year !== undefined && year !== '' && year !== 'undefined') {
+    result += ' ' + year;
+  }
+  result = removeUselessWords(result);
+
+  return encodeURIComponent(result);
+}
 
 /**
  * Get URL for searching in movies on Kinobox.
@@ -23,13 +42,8 @@ const getPage = {
  * @returns {string}
  */
 export function searchMovieOnKinobox(name, year = undefined) {
-  let result = name || '';
+  const term = prepareForSearch(name, year);
 
-  if (year !== undefined && year !== '' && year !== 'undefined') {
-    result += ' ' + year;
-  }
-
-  const term = encodeURIComponent(result);
   return getPage.search(term);
 }
 
