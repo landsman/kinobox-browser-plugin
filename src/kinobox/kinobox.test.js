@@ -20,5 +20,5 @@ test('searchMovieOnKinobox', () => {
 
   expect(
     prepareForSearch('Hra (film, 1997)', 1999)
-  ).toBe('Hra%20%201999');
+  ).toBe('Hra%201999');
 });

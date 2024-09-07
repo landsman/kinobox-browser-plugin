@@ -22,9 +22,12 @@ export function removeUselessWords(text) {
   // Remove specific patterns like "(film, 1997)"
   text = text.replace(regex, '').trim()
 
-  // Remove words from wordList
-  return text
+  // Remove words from wordList and join them back into a string
+  text = text
     .split(' ')
     .filter(word => !wordList.includes(word.toLowerCase()))
     .join(' ')
+
+  // Remove any extra spaces
+  return text.replace(/\s{2,}/g, ' ')
 }
