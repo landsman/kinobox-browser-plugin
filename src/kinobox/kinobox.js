@@ -9,7 +9,7 @@ const domain = 'https://www.kinobox.cz';
  * URLs catalog
  */
 const getPage = {
-  search: term => domain + `/vyhledavani?term=${term}`,
+  search: term => domain + `/vyhledavani?term=${term}&target=films`,
   charts: domain + '/zebricky',
   vod: domain + '/vod',
   television: domain + '/tvprogram/tipy',
