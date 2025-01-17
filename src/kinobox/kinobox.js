@@ -24,7 +24,7 @@ const getPage = {
  * @returns {Promise<void>}
  */
 export async function testCSFD(csfdId) {
-  const api = new KinoboxApi('test');
+  const api = new KinoboxApi(process.env.VITE_KB);
   return await api.getByCsfdId(csfdId);
 }
 
