@@ -36,7 +36,7 @@
     "vite": "^6.0.9"
   },
   "dependencies": {
-    "@landsman/kinobox-sdk": "^1.0.2"
+    "@landsman/kinobox-sdk": "^1.0.3"
   },
   "engines": {
     "node": ">=18.18.0",
