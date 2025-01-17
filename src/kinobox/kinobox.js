@@ -1,4 +1,5 @@
 import { removeUselessWords } from '../utils';
+import { KinoboxApi } from '@landsman/kinobox-sdk';
 
 /**
  * Production domain
@@ -16,6 +17,16 @@ const getPage = {
   cinema: domain + '/kino_program/hraji-v-kinech',
   articles: domain + '/clanky',
 };
+
+/**
+ * Get Kinobox movie data based on CSFD id.
+ * @param csfdId
+ * @returns {Promise<void>}
+ */
+export async function testCSFD(csfdId) {
+  const api = new KinoboxApi('test');
+  return await api.getByCsfdId(csfdId);
+}
 
 /**
  * Internal function

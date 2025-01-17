@@ -1,4 +1,4 @@
-import { getMovieNameAndYear } from '../csfd/movie';
+import { getMovieDetails } from '../csfd/movie';
 import { parseSearch } from '../csfd/search';
 import { parseTelevision } from '../csfd/tv';
 import { parseCinema } from '../csfd/cinema';
@@ -11,6 +11,7 @@ import {
   cinemaOnKinobox,
   searchMovieOnKinobox,
   televisionOnKinobox,
+  testCSFD,
   vodOnKinobox,
 } from '../kinobox/kinobox';
 
@@ -21,10 +22,15 @@ import {
  * @param html {Element|undefined}
  * @returns {string|null}
  */
-export function redirectFromCsfdToKinobox(currentUrl, html) {
+export async function redirectFromCsfdToKinobox(currentUrl, html) {
   /* movie */
-  const csfdMovieData = getMovieNameAndYear(currentUrl, html);
+  const csfdMovieData = getMovieDetails(currentUrl, html);
   if (csfdMovieData !== null) {
+    const api = await testCSFD(csfdMovieData.id);
+    console.log(api);
+    alert(api);
+    return null;
+
     return searchMovieOnKinobox(csfdMovieData.name, csfdMovieData.year);
   }
 
