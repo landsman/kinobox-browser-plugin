@@ -1,8 +1,8 @@
 name: Release
 
-# Add permissions for the GITHUB_TOKEN
 permissions:
   contents: write
+  packages: read
 
 on:
   push:
