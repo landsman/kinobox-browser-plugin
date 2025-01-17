@@ -2,7 +2,7 @@ name: PR
 
 permissions:
   contents: read
-  packages: read
+  packages: write
 
 on:
   pull_request:
