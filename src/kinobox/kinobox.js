@@ -1,5 +1,5 @@
 import { removeUselessWords } from '../utils';
-import { KinoboxApi } from '@landsman/kinobox-sdk';
+import { KinoboxApi } from '../../../kinobox-sdk/dist/index';
 
 /**
  * Production domain
@@ -24,7 +24,9 @@ const getPage = {
  * @returns {Promise<void>}
  */
 export async function testCSFD(csfdId) {
-  const api = new KinoboxApi(process.env.VITE_KB);
+  const key = process.env.VITE_KB;
+  console.log('key', key);
+  const api = new KinoboxApi(false, key);
   return await api.getByCsfdId(csfdId);
 }
 

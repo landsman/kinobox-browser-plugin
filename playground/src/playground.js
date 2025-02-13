@@ -1,9 +1,15 @@
-import { redirectFromCsfdToKinobox } from '../../src/redirect/csfd-kinobox.js';
+import { testCSFD } from '../../src/kinobox/kinobox.js';
+
+const movie = '1625';
 
 export function testCsfdApi(element) {
-  element.addEventListener('submit', (event) => {
+  element.addEventListener('submit', async (event) => {
     event.preventDefault();
     console.log(event);
-    redirectFromCsfdToKinobox('https://www.csfd.cz/film/1625-harry-potter-a-vezen-z-azkabanu/prehled/')
+
+    const api = await testCSFD(movie);
+    console.log(api);
+
+    //redirectFromCsfdToKinobox()
   })
 }
