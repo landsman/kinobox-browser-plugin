@@ -7,7 +7,7 @@ import { parseNumber } from '../utils';
  * @returns {{year: number|null, name: string|null}|null}
  */
 function parseMovieNameFromPage(html) {
-  if (html === undefined) {
+  if (html === undefined || html === null) {
     return null;
   }
 
@@ -38,6 +38,18 @@ function parseMovieNameFromPage(html) {
 }
 
 /**
+ * Parse first number from the URL slug.
+ * @param url {string}
+ * @returns {number}
+ */
+function parseIdFromUrl(url) {
+  const parts = url.split('/');
+  const slug = parts[4];
+
+  return parseInt(slug.split('-')[0]);
+}
+
+/**
  * Parse CSFD movie title from the URL slug
  *
  * @param currentUrl
@@ -62,17 +74,19 @@ function parseTermFromURL(currentUrl) {
  *
  * @param currentUrl {string}
  * @param html {Element|null}
- * @returns {{year: string, name: string|undefined}}
+ * @returns {{id: number, year: string, name: string|undefined}}
  */
-export function getMovieNameAndYear(currentUrl, html) {
+export function getMovieDetails(currentUrl, html) {
   const check = currentUrl.includes('/film/');
   if (!check) {
     return null;
   }
 
+  const id = parseIdFromUrl(currentUrl);
   const formUrl = parseTermFromURL(currentUrl);
 
   let result = {
+    id,
     name: formUrl || 'Matrix',
     year: '',
   };
