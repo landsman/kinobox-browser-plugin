@@ -18,8 +18,8 @@ Let me know if you’d like any further adjustments in [the issues](https://gith
 
 ## Chrome
 
-1. Open Google Chrome browser
-2. Go to [chrome://extensions/](chrome://extensions/) or More options icon (dots) -> Extensions
+1. Open Google Chrome (or Chromium-based) browser
+2. Go to `chrome://extensions/` or More options icon (dots) -> Extensions
 3. Click to `Developer mode` in the right top corner
 4. Click `Load unpacked` in the left top corner
 5. Select the unzipped folder that you downloaded
