@@ -1,6 +1,7 @@
 .PHONY: init dev clean qa test build
 
 init:
+	-git submodule update --init
 	npm ci
 	npm run build
 

@@ -1,0 +1,3 @@
+[submodule "packages/kinobox-sdk"]
+	path = packages/kinobox-sdk
+	url = git@github.com:landsman/kinobox-sdk.git
