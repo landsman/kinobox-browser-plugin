@@ -19,11 +19,11 @@ qa:
 test: qa
 
 build:
-	npm run build
+	npm run build -w @kinobox/browser-extension
 
 APP_NAME := Kinobox
 SAFARI_BUNDLE_ID := com.kinobox.extension.dev
-SAFARI_BUILD_DIR := build/safari-extension
+SAFARI_BUILD_DIR := packages/browser-extension/build/safari-extension
 
 .PHONY: safari-build
 safari-build: export NODE_ENV=production

@@ -1,4 +1,4 @@
-//import { kinoboxDesignSystem } from './design-system.js';
+//import { kinoboxDesignSystem } from '@kinobox/shared/design-system';
 
 const overlayId = 'kinobox-overlay';
 

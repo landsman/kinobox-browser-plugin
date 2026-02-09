@@ -1,4 +1,4 @@
-import { parseNumber } from '../utils';
+import { parseNumber } from '@kinobox/shared/utils';
 
 /**
  * Get movie name from the page HTML.

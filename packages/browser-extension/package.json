@@ -1,0 +1,17 @@
+{
+  "name": "@kinobox/browser-extension",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "vite build",
+    "watch": "vite build --watch"
+  },
+  "dependencies": {
+    "@kinobox/csfd": "*",
+    "@kinobox/seznam": "*",
+    "@kinobox/kinobox": "*"
+  },
+  "devDependencies": {
+    "vite": "^7.3.1"
+  }
+}

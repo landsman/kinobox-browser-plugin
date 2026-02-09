@@ -1,15 +1,15 @@
 import { defineConfig, loadEnv } from 'vite';
 import { resolve } from 'path';
 
-const chromePlugin = resolve(__dirname, 'src/chrome-plugin');
+const src = resolve(__dirname, 'src');
 
 export default defineConfig(({ mode }) => {
-  // Load environment variables based on mode (development, production, etc.)
-  const env = loadEnv(mode, process.cwd());
+  // Load environment variables from the monorepo root
+  const env = loadEnv(mode, resolve(__dirname, '../..'));
   console.log('VITE_MINIFY', env.VITE_MINIFY);
   return {
     build: {
-      minify: env.VITE_MINIFY === 'true', // Use your custom env variable
+      minify: env.VITE_MINIFY === 'true',
       target: 'esnext',
       modulePreload: {
         polyfill: false,
@@ -17,8 +17,8 @@ export default defineConfig(({ mode }) => {
       outDir: 'build/chrome-plugin',
       rollupOptions: {
         input: {
-          content: resolve(chromePlugin, 'content.js'),
-          background: resolve(chromePlugin, 'background.js'),
+          content: resolve(src, 'content.js'),
+          background: resolve(src, 'background.js'),
         },
         output: {
           entryFileNames: '[name].js',
@@ -27,7 +27,7 @@ export default defineConfig(({ mode }) => {
       },
     },
     define: {
-      'process.env': env, // Pass the environment variables to process.env if needed
+      'process.env': env,
     },
   };
 });

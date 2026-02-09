@@ -1,7 +1,7 @@
 import { findSiblingElement } from './utils.js';
 import { buildMovieButton } from './movie-button.js';
-import { searchMovieOnKinobox } from '../kinobox/kinobox.js';
-import {parseNumber} from "../utils";
+import { searchMovieOnKinobox } from '@kinobox/kinobox';
+import { parseNumber } from '@kinobox/shared/utils';
 
 /**
  * These buttons help us find the promoted movie in the source code.

@@ -1,4 +1,4 @@
-import { kinoboxDesignSystem } from '../kinobox/design-system';
+import { kinoboxDesignSystem } from '@kinobox/shared/design-system';
 
 /**
  * Build button next to the other with Kinobox redirect.

@@ -1,4 +1,4 @@
-import { redirectFromCsfdToKinobox } from '../redirect/csfd-kinobox';
+import { redirectFromCsfdToKinobox } from './redirect';
 
 export function initCsfd() {
   if (!window.location.href.includes('csfd.cz')) {
