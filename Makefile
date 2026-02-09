@@ -19,7 +19,7 @@ qa:
 test: qa
 
 build:
-	npm run build -w @kinobox/browser-extension
+	npm run build
 
 APP_NAME := Kinobox
 SAFARI_BUNDLE_ID := com.kinobox.extension.dev
@@ -31,7 +31,7 @@ safari-build: export TARGET_BROWSER=safari
 safari-build: clean
 
 .PHONY: safari-convert
-safari-convert: safari-build
+safari-convert: safari-build build
 	rm -rf $(SAFARI_BUILD_DIR)
 	mkdir -p $(SAFARI_BUILD_DIR)
 	# https://developer.apple.com/documentation/safariservices/converting-a-web-extension-for-safari
