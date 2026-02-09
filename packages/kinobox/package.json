@@ -1,0 +1,13 @@
+{
+  "name": "@kinobox/kinobox",
+  "version": "1.0.0",
+  "private": true,
+  "main": "./src/kinobox.js",
+  "exports": {
+    ".": "./src/kinobox.js",
+    "./overlay": "./src/overlay.js"
+  },
+  "dependencies": {
+    "@kinobox/shared": "*"
+  }
+}

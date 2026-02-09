@@ -1,0 +1,9 @@
+{
+  "name": "@kinobox/shared",
+  "version": "1.0.0",
+  "private": true,
+  "exports": {
+    "./utils": "./src/utils.js",
+    "./design-system": "./src/design-system.js"
+  }
+}

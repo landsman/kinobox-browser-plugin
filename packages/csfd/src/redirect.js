@@ -1,10 +1,10 @@
-import { getMovieNameAndYear } from '../csfd/movie';
-import { parseSearch } from '../csfd/search';
-import { parseTelevision } from '../csfd/tv';
-import { parseCinema } from '../csfd/cinema';
-import { parseCharts } from '../csfd/charts';
-import { parseVOD } from '../csfd/vod';
-import { parseNews } from '../csfd/news';
+import { getMovieNameAndYear } from './movie';
+import { parseSearch } from './search';
+import { parseTelevision } from './tv';
+import { parseCinema } from './cinema';
+import { parseCharts } from './charts';
+import { parseVOD } from './vod';
+import { parseNews } from './news';
 import {
   articlesOnKinobox,
   chartsOnKinobox,
@@ -12,7 +12,7 @@ import {
   searchMovieOnKinobox,
   televisionOnKinobox,
   vodOnKinobox,
-} from '../kinobox/kinobox';
+} from '@kinobox/kinobox';
 
 /**
  * From current URL of the movie on www.csfd.cz redirect me to www.kinobox.cz alternative.

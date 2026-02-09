@@ -1,4 +1,4 @@
-import { redirectFromCsfdToKinobox } from '../redirect/csfd-kinobox';
+import { redirectFromCsfdToKinobox } from './redirect';
 
 export function initCsfd() {
   if (!window.location.href.includes('csfd.cz')) {
@@ -8,7 +8,10 @@ export function initCsfd() {
   console.debug('---------------- KINOBOX-CSFD ----------------');
 
   /* redirect from csfd movie to kinobox search */
-  const movieRedirect = redirectFromCsfdToKinobox(window.location.href, document);
+  const movieRedirect = redirectFromCsfdToKinobox(
+    window.location.href,
+    document
+  );
   if (movieRedirect !== null) {
     window.location.href = movieRedirect;
   }

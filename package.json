@@ -1,14 +1,17 @@
 {
   "name": "kinobox-browser-plugin",
   "version": "1.0.0",
+  "private": true,
   "description": "Plugin for your web browser. First feature is automatic redirect from csfd movie page to kinobox search query with the movie title. Later we can do more with it.",
-  "main": "background.js",
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "lint": "eslint",
     "lint-fix": "eslint . --fix",
     "test": "jest",
-    "build": "vite build",
-    "watch": "vite build --watch",
+    "build": "npm run build -w @kinobox/browser-extension",
+    "watch": "npm run watch -w @kinobox/browser-extension",
     "format": "prettier --write ."
   },
   "repository": {
@@ -35,7 +38,6 @@
     "eslint": "^9.39.2",
     "globals": "^17.3.0",
     "jest": "^30.2.0",
-    "prettier": "^3.7.4",
-    "vite": "^7.3.1"
+    "prettier": "^3.7.4"
   }
 }

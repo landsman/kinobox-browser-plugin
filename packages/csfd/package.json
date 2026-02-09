@@ -1,0 +1,21 @@
+{
+  "name": "@kinobox/csfd",
+  "version": "1.0.0",
+  "private": true,
+  "main": "./src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./movie": "./src/movie.js",
+    "./search": "./src/search.js",
+    "./tv": "./src/tv.js",
+    "./cinema": "./src/cinema.js",
+    "./charts": "./src/charts.js",
+    "./vod": "./src/vod.js",
+    "./news": "./src/news.js",
+    "./redirect": "./src/redirect.js"
+  },
+  "dependencies": {
+    "@kinobox/shared": "*",
+    "@kinobox/kinobox": "*"
+  }
+}

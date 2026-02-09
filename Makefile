@@ -23,7 +23,7 @@ build:
 
 APP_NAME := Kinobox
 SAFARI_BUNDLE_ID := com.kinobox.extension.dev
-SAFARI_BUILD_DIR := build/safari-extension
+SAFARI_BUILD_DIR := packages/browser-extension/build/safari-extension
 
 .PHONY: safari-build
 safari-build: export NODE_ENV=production
@@ -31,7 +31,7 @@ safari-build: export TARGET_BROWSER=safari
 safari-build: clean
 
 .PHONY: safari-convert
-safari-convert: safari-build
+safari-convert: safari-build build
 	rm -rf $(SAFARI_BUILD_DIR)
 	mkdir -p $(SAFARI_BUILD_DIR)
 	# https://developer.apple.com/documentation/safariservices/converting-a-web-extension-for-safari

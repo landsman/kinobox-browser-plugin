@@ -1,4 +1,4 @@
-import { removeUselessWords } from '../utils';
+import { removeUselessWords } from '@kinobox/shared/utils';
 
 /**
  * Production domain

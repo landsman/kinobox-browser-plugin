@@ -1,5 +1,5 @@
 import { test, expect } from '@jest/globals';
-import { redirectFromCsfdToKinobox } from './csfd-kinobox';
+import { redirectFromCsfdToKinobox } from './redirect';
 
 test('movie - redirect from csfd to kinobox', () => {
   expect(
