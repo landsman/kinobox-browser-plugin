@@ -1,4 +1,4 @@
-.PHONY: init dev clean qa
+.PHONY: init dev clean qa test build
 
 init:
 	npm ci
@@ -15,6 +15,11 @@ clean:
 qa:
 	npm run lint
 	npm run test
+
+test: qa
+
+build:
+	npm run build
 
 APP_NAME := Kinobox
 SAFARI_BUNDLE_ID := com.kinobox.extension.dev
