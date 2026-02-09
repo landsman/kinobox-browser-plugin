@@ -6,7 +6,7 @@
 4. Run following build script
 
    ```bash
-   ./tools/safari.sh "Kinobox" "io.github.landsman.kinobox"
+   make convert-safari
    ```
 
 5. It will open xCode automatically
