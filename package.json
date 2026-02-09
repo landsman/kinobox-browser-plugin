@@ -20,6 +20,9 @@
   ],
   "author": "Michal Landsman",
   "license": "MIT",
+  "engines": {
+    "node": ">=20.19.0 || >=22.12.0"
+  },
   "bugs": {
     "url": "https://github.com/landsman/kinobox-browser-plugin/issues"
   },
