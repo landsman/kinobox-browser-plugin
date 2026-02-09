@@ -16,18 +16,18 @@ export function parseNumber(text) {
  * @returns {string}
  */
 export function removeUselessWords(text) {
-  const wordList = ['(film)', 'film']
-  const regex = /\(film,\s\d{4}\)/g
+  const wordList = ['(film)', 'film'];
+  const regex = /\(film,\s\d{4}\)/g;
 
   // Remove specific patterns like "(film, 1997)"
-  text = text.replace(regex, '').trim()
+  text = text.replace(regex, '').trim();
 
   // Remove words from wordList and join them back into a string
   text = text
     .split(' ')
     .filter(word => !wordList.includes(word.toLowerCase()))
-    .join(' ')
+    .join(' ');
 
   // Remove any extra spaces
-  return text.replace(/\s{2,}/g, ' ')
+  return text.replace(/\s{2,}/g, ' ');
 }

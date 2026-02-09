@@ -5,11 +5,11 @@
 
 version: 2
 updates:
-  - package-ecosystem: "npm"
-    directory: "/"
+  - package-ecosystem: 'npm'
+    directory: '/'
     schedule:
-      interval: "monthly"
-  - package-ecosystem: "npm"
-    directory: "/packages/browser-extension"
+      interval: 'monthly'
+  - package-ecosystem: 'npm'
+    directory: '/packages/browser-extension'
     schedule:
-      interval: "monthly"
+      interval: 'monthly'

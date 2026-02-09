@@ -13,13 +13,13 @@ function parseMovieNameFromPage(html) {
 
   const wrapper = html.getElementsByClassName('main-movie-profile');
   if (wrapper.length === 0) {
-    console.debug("Movie wrapper not found!");
+    console.debug('Movie wrapper not found!');
     return null;
   }
 
   const movieName = wrapper[0].getElementsByClassName('film-header-name');
   if (movieName.length === 0) {
-    console.debug("Movie name not found! #2");
+    console.debug('Movie name not found! #2');
     return null;
   }
 
@@ -34,7 +34,7 @@ function parseMovieNameFromPage(html) {
   return {
     name: nameText,
     year: cleanYear,
-  }
+  };
 }
 
 /**
