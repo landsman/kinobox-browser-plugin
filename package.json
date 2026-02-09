@@ -32,7 +32,7 @@
   "homepage": "https://github.com/landsman/kinobox-browser-plugin#readme",
   "devDependencies": {
     "@babel/preset-env": "^7.29.0",
-    "@eslint/js": "^9.36.0",
+    "@eslint/js": "^10.0.1",
     "@jest/globals": "^30.0.3",
     "babel-jest": "^30.2.0",
     "eslint": "^10.0.0",
